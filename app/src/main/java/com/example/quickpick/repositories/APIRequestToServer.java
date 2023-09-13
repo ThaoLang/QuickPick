@@ -216,4 +216,65 @@ public class APIRequestToServer {
 
     }
 
+    public int postUpdateFCMToken(UpdateFCMTokenRequest request)
+    {
+        String driverUpdateFCM_URL = BASE_URL.concat(ServerURLSubPaths.);
+        URL url = null;
+        int responseCode = -1;
+        try
+        {
+            url = new URL(driverUpdateFCM_URL);
+        }
+        catch (MalformedURLException malformedURLException)
+        {
+            Log.e("PostUpdateFCMToken error", malformedURLException.getMessage());
+            return responseCode;
+        }
+
+        HttpURLConnection urlConnection = null;
+
+        try
+        {
+            urlConnection = (HttpURLConnection) url.openConnection();
+            urlConnection.setRequestMethod(ServerHttpRequestMethods.POST);
+            urlConnection.setDoOutput(true);
+            urlConnection.setChunkedStreamingMode(0);
+            urlConnection.setRequestProperty(NGROK_IGNORE_WARNING_KEY, NGROK_IGNORE_WARNING_VALUE);
+
+            Uri.Builder uriBuilder = new Uri.Builder();
+
+            uriBuilder.appendQueryParameter(UpdateFCMTokenRequestAttributes.ID_TOKEN, request.getIdToken())
+                    .appendQueryParameter(UpdateFCMTokenRequestAttributes.SYSTEM_KEY, request.getSystemKey())
+                    .appendQueryParameter(UpdateFCMTokenRequestAttributes.USER_ID, request.getUserId())
+                    .appendQueryParameter(UpdateFCMTokenRequestAttributes.ROLE, request.getRole())
+                    .appendQueryParameter(UpdateFCMTokenRequestAttributes.FCM_TOKEN, request.getFcm_token());
+            String query = uriBuilder.build().getEncodedQuery();
+
+            BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(urlConnection.getOutputStream()));
+
+            writer.write(query);
+            writer.flush();
+            System.out.println("after send");
+
+            writer.close();
+            responseCode = urlConnection.getResponseCode();
+            System.out.println("after receive response");
+        }
+        catch(IOException ioException)
+        {
+            Log.e("PostUpdateFCMToken error", ioException.getMessage());
+            return -1;
+        }
+        finally
+        {
+            if(urlConnection != null)
+            {
+                urlConnection.disconnect();
+            }
+            System.out.println("response code: "+ responseCode);
+            return responseCode;
+        }
+
+    }
+
 }
