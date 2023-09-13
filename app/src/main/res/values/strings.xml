@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">EASY BOOKING</string>
+
+    <!--    login screen-->
+
+    <string name="email_field">Email</string>
+    <string name="username_field">User Name</string>
+    <string name="password_field">Password</string>
+    <string name="login_goto_signup_link">"Haven't had an account?"</string>
+    <string name="login_button">Login</string>
+
+    <!--    login screen-->
+
+    <!--    signup screen-->
+
+    <string name="phone_number_field">Phone Number</string>
+    <string name="signup_goto_login_link">Already have an account? Log in</string>
+    <string name="signup_button">Sign up</string>
+
+    <!--    signup screen -->
+
+    <!--    main screen-->
+
+    <string name="main_bottom_nav_home">Home</string>
+    <string name="main_bottom_nav_activity">Activity</string>
+    <string name="main_bottom_nav_notification">Notification</string>
+    <string name="main_bottom_nav_account">Account</string>
+
+    <!--    main screen-->
+
+    <!--home-->
+
+    <string name="home_handling_task">Handling task</string>
+    <string name="home_task_customername">Customer name</string>
+    <string name="home_task_from">From:</string>
+    <string name="home_task_to">To:</string>
+    <string name="home_task_total">Total:</string>
+    <string name="home_task_schedule">Schedule:</string>
+    <string name="home_task_distance">Distance:</string>
+    <string name="home_task_vnd">VND</string>
+    <string name="home_task_km">KM</string>
+    <string name="home_task_no_available_handling_task">Not Available</string>
+
+    <string name="home_available_task">Available tasks</string>
+
+    <string name="home_available_task_accept_task_button">Get it</string>
+    <string name="home_available_task_deny_task_button">Deny</string>
+
+    <!--home-->
+</resources>

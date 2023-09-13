@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingVertical="10dp"
+    android:paddingHorizontal="10dp"
+    android:background="@drawable/pill_shape_15per"
+    android:backgroundTint="@color/customColor3"
+    android:orientation="horizontal">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="8"
+        android:orientation="vertical">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/home_available_task_customername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/home_task_customername"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="5">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/point_48px"
+                android:maxWidth="30dp"
+                android:maxHeight="30dp"
+                android:layout_marginRight="8dp"
+                android:backgroundTint="@color/black"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/home_task_from"
+                android:gravity="center_vertical"
+                android:textSize="16sp"
+                android:textStyle="bold"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:paddingLeft="8dp"
+                android:id="@+id/home_available_task_start"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="123, phuong 21, quan Binh Thanh, HCM"
+                android:textSize="16sp"
+                android:maxLines="1"
+                android:textColor="@color/black"
+                android:gravity="end"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/location_on_48px"
+                android:maxWidth="30dp"
+                android:maxHeight="30dp"
+                android:layout_marginRight="8dp"
+                android:backgroundTint="@color/customColor2"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/home_task_to"
+                android:gravity="center_vertical"
+                android:textSize="16sp"
+                android:textStyle="bold"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:paddingLeft="8dp"
+                android:id="@+id/home_available_task_destination"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="227 Nguyen Van Cu, quan 5, tp HCM"
+                android:textSize="16sp"
+                android:maxLines="1"
+                android:textColor="@color/black"
+                android:gravity="end"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/receipt_long_48px"
+                android:maxWidth="30dp"
+                android:maxHeight="30dp"
+                android:layout_marginRight="8dp"
+                android:backgroundTint="@color/black"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/home_task_total"
+                android:gravity="center_vertical"
+                android:textSize="16sp"
+                android:textStyle="bold"/>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="end">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/home_available_task_total"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="25000"
+                    android:gravity="end"
+                    android:textSize="16sp"
+                    android:maxLines="1"
+                    android:textColor="@color/black"/>
+                <com.google.android.material.textview.MaterialTextView
+                    android:paddingLeft="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/home_task_vnd"
+                    android:gravity="end"
+                    android:textSize="16sp"
+                    android:maxLines="1"/>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/schedule_48px"
+                android:maxWidth="30dp"
+                android:maxHeight="30dp"
+                android:layout_marginRight="8dp"
+                android:backgroundTint="@color/black"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/home_task_schedule"
+                android:gravity="center_vertical"
+                android:textSize="16sp"
+                android:textStyle="bold"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:paddingLeft="8dp"
+                android:id="@+id/home_available_task_schedule"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="None"
+                android:gravity="end"
+                android:textSize="16sp"
+                android:maxLines="1"
+                android:textColor="@color/black"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/show_chart_48px"
+                android:maxWidth="30dp"
+                android:maxHeight="30dp"
+                android:layout_marginRight="8dp"
+                android:backgroundTint="@color/black"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/home_task_distance"
+                android:gravity="center_vertical"
+                android:textSize="16sp"
+                android:textStyle="bold"/>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/home_available_task_distance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="6.5"
+                    android:textSize="16sp"
+                    android:maxLines="1"
+                    android:gravity="end"
+                    android:textColor="@color/black"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:paddingLeft="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/home_task_km"
+                    android:textSize="16sp"
+                    android:maxLines="1"
+                    android:gravity="end"/>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="3"
+        android:gravity="end"
+        android:paddingVertical="5dp"
+        >
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/home_available_task_accept_button"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/pill_shape_50per"
+            android:text="@string/home_available_task_accept_task_button"
+            app:backgroundTint="@color/customColor4" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/home_available_task_deny_button"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:background="@drawable/pill_shape_50per"
+            app:backgroundTint="@color/customColor5"
+            android:text="@string/home_available_task_deny_task_button" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

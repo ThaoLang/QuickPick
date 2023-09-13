@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Back button -->
+    <ImageView
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Back"
+        android:src="@drawable/ic_back"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:background="@android:color/transparent"
+        android:onClick="onBackPressed" />
+
+    <!-- Your location title -->
+
+    <!-- Home button -->
+
+    <TextView
+        android:id="@+id/yourLocationText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/backButton"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="-25dp"
+        android:text="Your location"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+
+    <!-- Button below Your location -->
+
+    <Button
+        android:id="@+id/pickupLocationBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-100dp"
+        android:layout_marginTop="36dp"
+        android:layout_toEndOf="@id/yourLocationText"
+        android:background="@android:color/transparent"
+        android:text="Home"
+        android:inputType="textCapSentences"
+        android:maxLines="1"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+
+
+
+    <SearchView
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pickupLocationBtn"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/custom_search_view"
+        android:queryHint="Search location..." />
+
+    <!-- Suggested locations ListView -->
+    <ListView
+        android:id="@+id/suggestSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/searchView"
+        android:layout_marginTop="0dp" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="top"
+        app:constraint_referenced_ids="searchView" />
+
+</RelativeLayout>
