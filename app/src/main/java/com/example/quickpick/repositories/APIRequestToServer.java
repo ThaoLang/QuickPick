@@ -4,6 +4,7 @@ import static com.example.quickpick.constants.APIUrl.BASE_URL;
 import static com.example.quickpick.constants.APIUrl.GET_COST_URL;
 import static com.example.quickpick.constants.APIUrl.GET_DIRECTION_DETAIL_URL;
 import static com.example.quickpick.constants.APIUrl.POST_BOOKING_INFO_URL;
+import static com.example.quickpick.constants.APIUrl.UPDATE_FCM_TOKEN_URL;
 
 import android.net.Uri;
 import android.util.Log;
@@ -11,6 +12,7 @@ import android.util.Log;
 import com.example.quickpick.api_structure.GetCostRequest;
 import com.example.quickpick.api_structure.GetDirectionDetailRequest;
 import com.example.quickpick.api_structure.PostBookingInfoRequest;
+import com.example.quickpick.api_structure.UpdateFCMTokenRequest;
 import com.example.quickpick.constants.ServerHttpRequestMethods;
 
 import java.io.BufferedWriter;
@@ -218,7 +220,7 @@ public class APIRequestToServer {
 
     public int postUpdateFCMToken(UpdateFCMTokenRequest request)
     {
-        String driverUpdateFCM_URL = BASE_URL.concat(ServerURLSubPaths.);
+        String driverUpdateFCM_URL = BASE_URL.concat(UPDATE_FCM_TOKEN_URL);
         URL url = null;
         int responseCode = -1;
         try
@@ -236,18 +238,18 @@ public class APIRequestToServer {
         try
         {
             urlConnection = (HttpURLConnection) url.openConnection();
-            urlConnection.setRequestMethod(ServerHttpRequestMethods.POST);
+            urlConnection.setRequestMethod(String.valueOf(ServerHttpRequestMethods.POST));
             urlConnection.setDoOutput(true);
             urlConnection.setChunkedStreamingMode(0);
             urlConnection.setRequestProperty(NGROK_IGNORE_WARNING_KEY, NGROK_IGNORE_WARNING_VALUE);
 
             Uri.Builder uriBuilder = new Uri.Builder();
 
-            uriBuilder.appendQueryParameter(UpdateFCMTokenRequestAttributes.ID_TOKEN, request.getIdToken())
-                    .appendQueryParameter(UpdateFCMTokenRequestAttributes.SYSTEM_KEY, request.getSystemKey())
-                    .appendQueryParameter(UpdateFCMTokenRequestAttributes.USER_ID, request.getUserId())
-                    .appendQueryParameter(UpdateFCMTokenRequestAttributes.ROLE, request.getRole())
-                    .appendQueryParameter(UpdateFCMTokenRequestAttributes.FCM_TOKEN, request.getFcm_token());
+            uriBuilder.appendQueryParameter(UpdateFCMTokenRequest.ID_TOKEN, request.getIdToken())
+                    .appendQueryParameter(UpdateFCMTokenRequest.SYSTEM_KEY, request.getSystemKey())
+                    .appendQueryParameter(UpdateFCMTokenRequest.USER_ID, request.getUserId())
+                    .appendQueryParameter(UpdateFCMTokenRequest.ROLE, request.getRole())
+                    .appendQueryParameter(UpdateFCMTokenRequest.FCM_TOKEN, request.getFcm_token());
             String query = uriBuilder.build().getEncodedQuery();
 
             BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(urlConnection.getOutputStream()));

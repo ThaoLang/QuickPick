@@ -88,13 +88,13 @@ public class ActivityTab extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
 //        return super.onCreateView(inflater, container, savedInstanceState);
-        View view = inflater.inflate(R.layout.fragment_activity, null);
+        View view = inflater.inflate(R.layout.activity_login, null);
 
 
-        ScheduledButton = (MaterialButton) view.findViewById(R.id.trips_history_button);
-        OngoingButton = (MaterialButton) view.findViewById(R.id.trips_ongoing_button);
-        HistoryButton = (MaterialButton) view.findViewById(R.id.trips_scheduled_button);
-         recyclerViewPosition = (RecyclerView) view.findViewById(R.id.trips_recyclerview_holder);
+//        ScheduledButton = (MaterialButton) view.findViewById(R.id.trips_history_button);
+//        OngoingButton = (MaterialButton) view.findViewById(R.id.trips_ongoing_button);
+//        HistoryButton = (MaterialButton) view.findViewById(R.id.trips_scheduled_button);
+//         recyclerViewPosition = (RecyclerView) view.findViewById(R.id.trips_recyclerview_holder);
 
 
         currentMode = 0;

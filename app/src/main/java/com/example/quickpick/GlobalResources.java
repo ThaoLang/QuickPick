@@ -2,6 +2,7 @@ package com.example.quickpick;
 
 import android.app.Application;
 
+import com.example.quickpick.repositories.APIRequestToServer;
 import com.example.quickpick.repositories.FirebaseRepository;
 
 import javax.inject.Singleton;
@@ -10,14 +11,14 @@ import javax.inject.Singleton;
 public class GlobalResources extends Application
 {
     private FirebaseRepository firebaseRepository;
-    private APIRequestTOServer apiRequestTOServer;
+    private APIRequestToServer apiRequestTOServer;
 
     @Override
     public void onCreate()
     {
         super.onCreate();
         firebaseRepository = FirebaseRepository.getInstance(getApplicationContext());
-        apiRequestTOServer = new APIRequestTOServer();
+        apiRequestTOServer = new APIRequestToServer();
     }
 
     public FirebaseRepository getFirebaseRepository()
@@ -25,7 +26,7 @@ public class GlobalResources extends Application
         return firebaseRepository;
     }
 
-    public APIRequestTOServer getApiRequestTOServer()
+    public APIRequestToServer getApiRequestTOServer()
     {
         return apiRequestTOServer;
     }

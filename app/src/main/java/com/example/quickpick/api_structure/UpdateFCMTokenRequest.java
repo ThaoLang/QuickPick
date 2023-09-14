@@ -1,11 +1,16 @@
-package com.example.call_center_driver_app.repositories.call_center_server.Objects;
-
-
+package com.example.quickpick.api_structure;
 
 import java.io.Serializable;
 
 public class UpdateFCMTokenRequest implements Serializable
 {
+    public static String ID_TOKEN="idToken";
+    public static String USER_ID="userId";
+    public static String SYSTEM_KEY="systemKey";
+    public static String ROLE="role";
+    public static String FCM_TOKEN="fcm_token";
+    public static String START_ADDRESS="startAddress";
+    public static String END_ADDRESS="endAddress";
     private String idToken;
     private String systemKey;
     private String userId;

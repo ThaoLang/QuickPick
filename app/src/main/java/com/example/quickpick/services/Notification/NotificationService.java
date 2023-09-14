@@ -1,4 +1,17 @@
+package com.example.quickpick.services.Notification;
 
+import android.content.Context;
+
+import androidx.annotation.NonNull;
+
+import com.example.quickpick.my_intefaces.GetRunnable_StringParam_Function;
+import com.example.quickpick.services.Notification.constant.RemoteMessageAttributes;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.messaging.FirebaseMessaging;
+import com.google.firebase.messaging.FirebaseMessagingService;
+import com.google.firebase.messaging.RemoteMessage;
+
+import java.util.Map;
 
 public class NotificationService extends FirebaseMessagingService
 {
@@ -10,8 +23,6 @@ public class NotificationService extends FirebaseMessagingService
         super.onCreate();
         context = getApplicationContext();
         serviceProvider = new NotificationServiceProvider(NotificationService.this, context);
-
-        NotificationConverterStrategyProvider converterStrategyProvider = new NotificationConverterStrategyProvider();
 
         FirebaseMessaging.getInstance().getToken()
                 .addOnSuccessListener(new OnSuccessListener<String>() {
@@ -30,15 +41,6 @@ public class NotificationService extends FirebaseMessagingService
         serviceProvider.handleRemoteMessage(message);
     }
 
-    /**
-     * There are two scenarios when onNewToken is called:
-     * 1) When a new token is generated on initial app startup
-     * 2) Whenever an existing token is changed
-     * Under #2, there are three scenarios when the existing token is changed:
-     * A) App is restored to a new device
-     * B) User uninstalls/reinstalls the app
-     * C) User clears app data
-     */
     @Override
     public void onNewToken(@NonNull String token) {
         //send to server
@@ -46,4 +48,8 @@ public class NotificationService extends FirebaseMessagingService
         serviceProvider.sendUpdateNotificationToken(token, context);
         //TODO:send to server
     }
+
+
+
+
 }
